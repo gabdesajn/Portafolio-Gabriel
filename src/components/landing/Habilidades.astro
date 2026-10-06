@@ -1,0 +1,38 @@
+---
+import { habilidades } from '../../data/portfolio';
+---
+
+<section id="habilidades" class="alt">
+	<div class="wrap">
+		<h2>Habilidades</h2>
+		{habilidades.map((h) => (
+			<div class="skill-group">
+				<h3>{h.grupo}</h3>
+				<ul class="chips">
+					{h.items.map((it) => <li>{it}</li>)}
+				</ul>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	.skill-group + .skill-group {
+		margin-top: 28px;
+	}
+	.chips {
+		list-style: none;
+		padding: 0;
+		margin: 12px 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.chips li {
+		background: #fff;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		padding: 6px 14px;
+		font-size: 0.95rem;
+	}
+</style>

@@ -1,0 +1,121 @@
+/* Estilos compartidos por todas las secciones de la landing. */
+:root {
+	--ink: #ffffff;
+	--muted: #fdfdfd;
+	--line: #e4e7ef;
+	--bg: #273c75;
+	--bg-alt: #f6f7fb;
+	--brand: #222f3e;
+	--brand-soft: #eef0ff;
+}
+html {
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+body {
+	background: var(--bg);
+	color: var(--ink);
+	font-size: 17px;
+	line-height: 1.6;
+}
+.wrap {
+	width: 1080px;
+	max-width: calc(100% - 32px);
+	margin: 0 auto;
+}
+main.landing {
+	width: auto;
+	max-width: none;
+	padding: 0;
+}
+section {
+	min-height: calc(100dvh - 64px);
+	padding: 80px 0;
+	scroll-margin-top: 64px;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+}
+section.alt {
+	background: rgba(246, 247, 251, 0.7);
+}
+h2 {
+	font-size: 2rem;
+	margin-bottom: 32px;
+	color: #c8d6e5;
+}
+h3 {
+	font-size: 1.15rem;
+	margin: 0;
+}
+
+/* Botones (Hero y Contacto) */
+.cta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 28px;
+}
+.btn {
+	display: inline-block;
+	padding: 12px 22px;
+	border-radius: 10px;
+	border: 1px solid var(--line);
+	color: var(--ink);
+	text-decoration: none;
+	font-weight: 700;
+	transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn.primary {
+	background: var(--brand);
+	border-color: var(--brand);
+	color: #fff;
+}
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(79, 70, 229, 0.2);
+}
+
+/* Tarjetas (Proyectos y Certificaciones) */
+.card {
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	padding: 20px;
+}
+
+/* Timeline (Experiencia y Educación) */
+.timeline {
+	display: grid;
+	gap: 28px;
+}
+.item {
+	border-left: 3px solid var(--brand);
+	padding-left: 20px;
+}
+.item-head {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 4px 16px;
+	align-items: baseline;
+}
+.date {
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+.sub {
+	color: var(--brand);
+	margin: 4px 0 8px;
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+	section {
+		padding: 56px 0;
+	}
+}

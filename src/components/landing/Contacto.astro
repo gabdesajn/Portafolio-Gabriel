@@ -1,0 +1,26 @@
+---
+import { email, github } from '../../data/portfolio';
+---
+
+<section id="contacto" class="contact">
+	<div class="wrap">
+		<h2>Contacto</h2>
+		<p>¿Tienes un proyecto en mente? Escríbeme.</p>
+		<div class="cta">
+			<a class="btn primary" href={`mailto:${email}`}>{email}</a>
+			<a class="btn" href={github} target="_blank" rel="noopener">GitHub</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		text-align: center;
+	}
+	.contact .cta {
+		justify-content: center;
+	}
+	.contact p {
+		color: var(--muted);
+	}
+</style>

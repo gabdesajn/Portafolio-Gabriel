@@ -1,0 +1,72 @@
+---
+import { nombre } from '../../data/portfolio';
+---
+
+<nav class="nav">
+	<div class="wrap nav-inner">
+		<a href="#inicio" class="logo">{nombre}</a>
+		<ul>
+			<li><a href="#proyectos">Proyectos</a></li>
+			<li><a href="#experiencia">Experiencia</a></li>
+			<li><a href="#educacion">Educación</a></li>
+			<li><a href="#contacto">Contacto</a></li>
+		</ul>
+	</div>
+</nav>
+
+<script>
+	const nav = document.querySelector('.nav');
+	const update = () => nav?.classList.toggle('scrolled', window.scrollY > 10);
+	window.addEventListener('scroll', update, { passive: true });
+	update();
+</script>
+
+<style>
+	.nav {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: transparent;
+		border-bottom: 1px solid transparent;
+		transition: background 0.3s, border-color 0.3s;
+	}
+	.nav.scrolled {
+		background: #273c75;
+		backdrop-filter: blur(8px);
+	}
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 64px;
+	}
+	.logo {
+		font-weight: 700;
+		color: var(--ink);
+		text-decoration: none;
+	}
+	.nav ul {
+		display: flex;
+		gap: 24px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.nav ul a {
+		color: var(--muted);
+		text-decoration: none;
+		font-size: 0.95rem;
+	}
+	.nav ul a:hover {
+		color: var(--brand);
+	}
+
+	@media (max-width: 760px) {
+		.nav ul {
+			gap: 14px;
+		}
+		.nav ul li:nth-child(3) {
+			display: none;
+		}
+	}
+</style>

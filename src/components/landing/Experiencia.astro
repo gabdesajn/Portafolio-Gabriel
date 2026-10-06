@@ -1,0 +1,31 @@
+---
+import { experiencia } from '../../data/portfolio';
+---
+
+<section id="experiencia" class="alt">
+	<div class="wrap">
+		<h2>Experiencia</h2>
+		<div class="timeline">
+			{experiencia.map((e) => (
+				<article class="item">
+					<div class="item-head">
+						<h3>{e.puesto}</h3>
+						<span class="date">{e.fecha}</span>
+					</div>
+					<p class="sub">{e.empresa} · {e.lugar}</p>
+					<ul>
+						{e.puntos.map((pt) => <li>{pt}</li>)}
+					</ul>
+				</article>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.item ul {
+		margin: 0;
+		padding-left: 18px;
+		color: var(--muted);
+	}
+</style>

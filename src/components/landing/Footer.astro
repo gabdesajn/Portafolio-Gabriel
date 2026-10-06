@@ -1,0 +1,17 @@
+---
+import { nombre } from '../../data/portfolio';
+---
+
+<footer class="foot">
+	<div class="wrap">© {new Date().getFullYear()} {nombre}</div>
+</footer>
+
+<style>
+	.foot {
+		border-top: 1px solid var(--line);
+		padding: 24px 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+		text-align: center;
+	}
+</style>

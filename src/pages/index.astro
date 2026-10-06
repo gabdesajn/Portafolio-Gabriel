@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import ComicBackground from '../components/ComicBackground.astro';
+import Contacto from '../components/landing/Contacto.astro';
+import Educacion from '../components/landing/Educacion.astro';
+import Experiencia from '../components/landing/Experiencia.astro';
+import Footer from '../components/landing/Footer.astro';
+import Habilidades from '../components/landing/Habilidades.astro';
+import Hero from '../components/landing/Hero.astro';
+import Nav from '../components/landing/Nav.astro';
+import Proyectos from '../components/landing/Proyectos.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import '../styles/landing.css';
+
+// Tus datos (nombre, proyectos, experiencia...) están en src/data/portfolio.ts
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<ComicBackground color="#ffffff" />
+		<Nav />
+
+		<main class="landing">
+			<Hero />
+			<Proyectos />
+			<Experiencia />
+			<Educacion />
+			<Habilidades />
+			<Contacto />
+		</main>
+
+		<Footer />
+	</body>
+</html>
